@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: boder-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+html,
+body{
+    height: 100%;
+    width: 100%;
+}
+
+#chat{
+    padding: 20px;
+    border: 2px solid #111;
+    border-radius: 10px;
+    color: white;
+    margin: 10px;
+    background: #111;
+}
+.msg , .from , .to , .date , .time{
+    margin: 10px;
+}
+
+.msg span , .from span, .to span , .date span , .time span{ 
+    color: aqua;
+    margin: 10px;
+}
+
+.from span, .to span{
+    font-style: italic;
+}
+.msg span{
+    text-decoration: underline;
+}
+h2{
+    text-align: center;
+    padding: 20px;
+}
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+.buttons button{
+    padding: 10px;
+}

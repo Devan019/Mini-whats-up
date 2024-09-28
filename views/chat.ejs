@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini What's upp</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h2>Mini What's Upp</h2>
+
+    <form action="/chats/new" method="get">
+        <button type="submit">New Chat</button>
+    </form>
+
+    <% for (let chat of chats){ %>
+        <div id="chat">
+            <div class="from">
+               from : <span> <%= chat.from %></span>
+            </div>
+            <div class="to">
+               to : <span><%= chat.to %></span>
+            </div>
+            <div class="msg">
+               msg : <span>"<%= chat.msg %>"</span>
+            </div>
+            <div class="time">
+                Time :- <span><%= chat._created_at.toString().split(" ")[4] %></span>
+            </div>
+            <div class="date">
+                Date :- <span><%= chat._created_at.toString().split(" ").slice(0,4).join(" ") %></span>
+            </div>
+            <div class="buttons">
+                <form action="/chats/<%=chat._id%>?_method=DELETE" method="post">
+                    <button type="submit" onclick="return confirm('Conform to delete chat of <%=chat.from%>')">Delete</button>
+                </form>
+                <form action="/chats/<%=chat._id%>?_method=PATCH" method="post">
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+        <% } %>
+
+
+        
+</body>
+
+</html>
