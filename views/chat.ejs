@@ -39,6 +39,9 @@
                 <form action="/chats/<%=chat._id%>?_method=PATCH" method="post">
                     <button type="submit">Update</button>
                 </form>
+                <form action="/chats/<%=chat._id%>" method="get">
+                    <button type="submit">Show</button>
+                </form>
             </div>
         </div>
         <% } %>

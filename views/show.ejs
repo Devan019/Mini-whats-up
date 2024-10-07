@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOW ROUTE</title>
+    <style>
+        <%=  include('../public/style.css') %>
+    </style>
+</head>
+<body>
+    <div id="chat">
+        <div class="from">
+           from : <span> <%= chat.from %></span>
+        </div>
+        <div class="to">
+           to : <span><%= chat.to %></span>
+        </div>
+        <div class="msg">
+           msg : <textarea name="msg" id="msg"><%=chat.msg%></textarea>
+        </div>
+        <div class="time">
+            Time :- <span><%= chat._created_at.toString().split(" ")[4] %></span>
+        </div>
+        <div class="date">
+            Date :- <span><%= chat._created_at.toString().split(" ").slice(0,4).join(" ") %></span>
+        </div>
+    </div>
+
+    <a href="http://localhost:8000">back to page</a>
+</body>
+</html>
